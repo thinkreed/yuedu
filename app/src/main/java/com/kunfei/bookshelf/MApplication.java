@@ -1,6 +1,18 @@
 //Copyright (c) 2017. 章钦豪. All rights reserved.
 package com.kunfei.bookshelf;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+
+import com.kunfei.bookshelf.constant.AppConstant;
+import com.kunfei.bookshelf.help.AppFrontBackHelper;
+import com.kunfei.bookshelf.help.CrashHandler;
+import com.kunfei.bookshelf.help.FileHelp;
+import com.kunfei.bookshelf.model.UpLastChapterModel;
+import com.kunfei.bookshelf.utils.theme.ThemeStore;
+
 import android.Manifest;
 import android.app.Application;
 import android.app.NotificationChannel;
@@ -11,23 +23,9 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Build;
 import android.text.TextUtils;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.multidex.MultiDex;
-
-import com.kunfei.bookshelf.constant.AppConstant;
-import com.kunfei.bookshelf.help.AppFrontBackHelper;
-import com.kunfei.bookshelf.help.CrashHandler;
-import com.kunfei.bookshelf.help.FileHelp;
-import com.kunfei.bookshelf.model.UpLastChapterModel;
-import com.kunfei.bookshelf.utils.theme.ThemeStore;
-
-import java.io.File;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.internal.functions.Functions;
 import io.reactivex.plugins.RxJavaPlugins;
 
@@ -157,7 +155,7 @@ public class MApplication extends Application {
     }
 
     public boolean getDonateHb() {
-        return donateHb || BuildConfig.DEBUG;
+        return true;
     }
 
     public void upDonateHb() {
